@@ -36,7 +36,12 @@ async def analyze_image_endpoint(
 ):
     start_time = time.time()
     try:
-        if file.content_type not in ["image/jpeg", "image/png", "image/jpg"]:
+        # ✅ Fix: Content type + extension check
+        allowed_types = ["image/jpeg", "image/png"]
+        allowed_exts = [".jpg", ".jpeg", ".png"]
+
+        ext = os.path.splitext(file.filename)[1].lower()
+        if (file.content_type not in allowed_types) and (ext not in allowed_exts):
             raise HTTPException(status_code=400, detail="Only JPEG or PNG images are supported")
 
         filename = f"temp_{uuid.uuid4().hex}_{file.filename}"
@@ -127,6 +132,8 @@ async def analyze_image_endpoint(
             "voice_url": f"/uploadvoices/{voice_filename}" if voice_filename else None,
             "timestamp": str(datetime.datetime.now())
         }
+    except HTTPException:
+        raise
     except Exception as e:
         print(f"Error in /analyze: {traceback.format_exc()}")
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
