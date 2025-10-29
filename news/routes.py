@@ -2,12 +2,14 @@
 from fastapi import APIRouter
 import requests
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 router = APIRouter()
 
 @router.get("/crop-news")
 async def get_crop_news():
-    api_key = os.getenv("NEWSAPI_KEY", "93ef535022514af9be07b6c31ef76af5")  # Replace with your key
+    api_key = os.getenv("NEWSAPI_KEY")  # Replace with your key
     # Broad query covering all crop/agriculture related topics
     query = "agriculture OR farming OR crops OR harvest OR farmer"
     url = f"https://newsapi.org/v2/everything?q={query}&apiKey={api_key}&language=en&sortBy=publishedAt&pageSize=10"

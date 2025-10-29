@@ -2,11 +2,15 @@ import requests
 import json
 from google.cloud import speech_v1p1beta1 as speech
 from langdetect import detect, DetectorFactory
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Ensure consistent language detection
 DetectorFactory.seed = 0
 
-API_KEY = "AIzaSyCp4awTqgjl7hUfY_iecS-CbfG81_Aa784"
+API_KEY = os.getenv("CHATBOT_API")
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={API_KEY}"
 
 def get_system_instruction(response_language):

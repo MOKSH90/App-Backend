@@ -7,8 +7,9 @@ from image_analysis.routes import router as image_router
 from micro_calculator.routes import router as micro_router
 from fastapi.staticfiles import StaticFiles
 from news.routes import router as news_router
-
-
+from Cart.routes import router as cart_router
+from Crop_management.routes import router as crop_router
+from Market.routes import router as market_router 
 
 app = FastAPI()
 
@@ -30,7 +31,9 @@ app.include_router(chatbot_router, prefix="/chat", tags=["chat"])
 app.include_router(weather_router, prefix="/weather", tags=["weather"])
 app.include_router(image_router, prefix="/image-analysis", tags=["image-analysis"])
 app.include_router(micro_router, prefix="/micro-calculator", tags=["calculator"])
-
+app.include_router(cart_router, prefix="/cart", tags=["cart"])
+app.include_router(crop_router, prefix="/crop", tags=["crop"])
+app.include_router(market_router, prefix="/farmer", tags=["Farmer Price Tracker"])
 # Health check endpoint
 
 @app.get("/")
