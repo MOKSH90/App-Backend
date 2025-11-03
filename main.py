@@ -19,13 +19,13 @@ app.mount("/uploadimages", StaticFiles(directory="uploadimages"), name="uploadim
 # Add CORS middleware for frontend integration (optional, adjust origins as needed)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update to specific domains in production
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include routers
+
 app.include_router(auth_router, prefix="/auth", tags=["auth"])
 app.include_router(chatbot_router, prefix="/chat", tags=["chat"])
 app.include_router(weather_router, prefix="/weather", tags=["weather"])
@@ -34,7 +34,7 @@ app.include_router(micro_router, prefix="/micro-calculator", tags=["calculator"]
 app.include_router(cart_router, prefix="/cart", tags=["cart"])
 app.include_router(crop_router, prefix="/crop", tags=["crop"])
 app.include_router(market_router, prefix="/farmer", tags=["Farmer Price Tracker"])
-# Health check endpoint
+
 
 @app.get("/")
 async def root():

@@ -47,7 +47,4 @@ class Soil_select(str, Enum):
 class Add_Crops(BaseModel):
     crop_type: Crop_type_select
     land_size: str = Field(..., min_length=1)
-    soil_type: Soil_select
     start_date: date
-    lat: float
-    lon: float

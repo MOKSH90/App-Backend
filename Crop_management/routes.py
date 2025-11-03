@@ -1,8 +1,14 @@
 from fastapi import APIRouter, HTTPException
+import httpx
 from Crop_management.models import Add_Crops
 from auth.database import users_collection
 
+import sys
+from enum import Enum
+app = APIRouter()
+
 router = APIRouter()
+ip_url = "http://192.168.220.173/data"
 
 @router.post("/add_crops")
 async def Add_crop(phone: str, crop: Add_Crops):
@@ -45,3 +51,19 @@ async def get_all_crops(phone: str):
     
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error fetching the crops: {str(e)}")
+
+@router.get("/fetch_soil_details")
+async def FetchSoilData():
+    try:
+        async with httpx.AsyncClient(timeout=10) as client:
+            response = await client.get(ip_url)
+            response.raise_for_status()
+            data = response.json()
+            return{"source": ip_url, "soil_data": data}
+    except httpx.RequestError as e:
+        raise HTTPException(status_code=500, detail=f"Request failed: {e}")
+    except httpx.HTTPStatusError as e:
+        raise HTTPException(status_code=e.response.status_code, detail=f"Remote error: {e}")
+    
+
+
