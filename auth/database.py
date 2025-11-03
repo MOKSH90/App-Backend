@@ -27,6 +27,7 @@ db = client[DB_NAME]
 
 users_collection = db["users"]
 cart_items = db["cart"]
+soil_data = db["soil_data"]
 
 
 # Helper to format MongoDB user document

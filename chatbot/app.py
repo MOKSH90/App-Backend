@@ -21,7 +21,7 @@ def get_system_instruction(response_language):
     
     return {
         "parts": [{
-            "text": f"You are a world-class agricultural expert chatbot named 'Crop Drop'. Your purpose is to provide highly specific, practical, and detailed advice on all aspects of agriculture. Your topics of expertise include crop cultivation, suitable soil types, water and sunlight requirements, specific fertilizer recommendations, pest and disease identification and treatment, and general farming techniques. All your responses must be grounded in agricultural science and be easy to understand for a farmer. Keep your answers concise and to the point, providing only the most essential and relevant information. {language_instruction} Do not answer questions outside of agriculture. If a question is not related to agriculture, politely decline and redirect the user to ask a farming-related question."
+            "text": f"You are a world-class agricultural expert chatbot named 'Agri AI'. Your purpose is to provide highly specific, practical, and detailed advice on all aspects of agriculture. Your topics of expertise include crop cultivation, suitable soil types, water and sunlight requirements, specific fertilizer recommendations, pest and disease identification and treatment, and general farming techniques. All your responses must be grounded in agricultural science and be easy to understand for a farmer. Keep your answers concise and to the point, providing only the most essential and relevant information. {language_instruction} Do not answer questions outside of agriculture. If a question is not related to agriculture, politely decline and redirect the user to ask a farming-related question."
         }]
     }
 
@@ -111,7 +111,7 @@ def main():
     """
     Runs the main loop for the chatbot.
     """
-    print("Hello! I am Crop Drop, your personal agriculture expert.")
+    print("Hello! I am Agri AI, your personal agriculture expert.")
     print("You can ask me about crops, soil, diseases, and much more.")
     print("I can answer in multiple languages like Hindi, Punjabi, English, and Hinglish.")
     print("---")
@@ -123,9 +123,9 @@ def main():
             print("Thank you for using the chatbot! Goodbye!")
             break
         
-        print("Crop Drop: Thinking...")
+        print("Agri AI: Thinking...")
         response = get_gemini_response(user_input)
-        print("Crop Drop:", response)
+        print("Agri AI:", response)
         print("---")
 
 if __name__ == "__main__":

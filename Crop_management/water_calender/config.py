@@ -1,27 +1,21 @@
-# FERTILIZER_COMPOSITION = {
-#     'urea': {'n': 0.46, 'p': 0, 'k': 0},
-#     'dap': {'n': 0.18, 'p': 0.46, 'k': 0},
-#     'mop': {'n': 0, 'p': 0, 'k': 0.60}
-# }
+import os
+from datetime import datetime
 
-# STATE_SOIL_NPK = { #dummy
-#     'punjab': {'n': 25, 'p': 15, 'k': 20},
-#     'haryana': {'n': 24, 'p': 14, 'k': 19},
-#     'up': {'n': 23, 'p': 13, 'k': 18},
-#     'bihar': {'n': 20, 'p': 10, 'k': 15},
-#     'wb': {'n': 21, 'p': 11, 'k': 16},
-#     'mp': {'n': 22, 'p': 12, 'k': 17},
-#     'maharashtra': {'n': 18, 'p': 8, 'k': 12},
-#     'gujarat': {'n': 19, 'p': 9, 'k': 13},
-#     'rajasthan': {'n': 17, 'p': 7, 'k': 11},
-#     'tamilnadu': {'n': 22, 'p': 12, 'k': 18},
-#     'karnataka': {'n': 21, 'p': 11, 'k': 17},
-#     'kerala': {'n': 23, 'p': 13, 'k': 19},
-#      'andhra': {'n': 20, 'p': 10, 'k': 16},
-#     'telangana': {'n': 19, 'p': 9, 'k': 15},
-#     'assam': {'n': 22, 'p': 12, 'k': 18},
-#     'odisha': {'n': 21, 'p': 11, 'k': 17}
-# }
+HECTARE_TO_ACRE = 0.404686 
+MM_TO_LITERS_PER_ACRE = 4046.86 
+MANAGEMENT_ALLOWED_DEPLETION = 0.5 
+DEFAULT_IRRIGATION_EFFICIENCY = 0.75
+TODAY = datetime.now().date()
+
+
+OPENWEATHER_API_KEY = "3f010e52c461f5f74f7afa9b54c03265"
+NPK_MODEL_API_URL = "add " 
+
+FERTILIZER_COMPOSITION = {
+    'urea': {'n': 0.46, 'p': 0, 'k': 0},
+    'dap': {'n': 0.18, 'p': 0.46, 'k': 0},
+    'mop': {'n': 0, 'p': 0, 'k': 0.60}
+}
 
 SOIL_WATER_PROPERTIES = {
     "alluvial": {"available_water_decimal": 0.19},
