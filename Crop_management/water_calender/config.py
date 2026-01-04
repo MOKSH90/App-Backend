@@ -22,7 +22,7 @@ SOIL_WATER_PROPERTIES = {
     "clayey": {"available_water_decimal": 0.18},
     "loamy": {"available_water_decimal": 0.16},
     "sandy": {"available_water_decimal": 0.07},
-    "black": {"available_water_decimal": 0.20},
+    "black soil": {"available_water_decimal": 0.20},
     "red and yellow": {"available_water_decimal": 0.13},
     "laterite": {"available_water_decimal": 0.09},
     "arid": {"available_water_decimal": 0.09},

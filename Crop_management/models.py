@@ -8,7 +8,7 @@ class Crop_type_select(str, Enum):
     tomato = "tomato"
     potato = "potato"
     sugarcane = "sugarcane"
-    rice = "rice"
+    paddy_rice = "paddy (rice)"
     bajra = "bajra"
     banana = "banana"
     brinjal = "brinjal"
@@ -46,5 +46,5 @@ class Soil_select(str, Enum):
 
 class Add_Crops(BaseModel):
     crop_type: Crop_type_select
-    land_size: str = Field(..., min_length=1)
+    land_size: float = Field(..., gt=0, description="Land area in acres")
     start_date: date

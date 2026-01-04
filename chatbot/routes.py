@@ -43,7 +43,7 @@ async def save_chat_to_db(chat_data: dict):
 # -------------------------
 @router.post("/general")
 async def general_chat(request: ChatRequest):
-    """General text chat with Gemini AI."""
+    
     try:
         response = get_general_ai_response(request.prompt)
 

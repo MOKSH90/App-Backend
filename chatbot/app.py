@@ -11,7 +11,7 @@ load_dotenv()
 DetectorFactory.seed = 0
 
 API_KEY = os.getenv("CHATBOT_API")
-API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={API_KEY}"
+API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
 def get_system_instruction(response_language):
     """
