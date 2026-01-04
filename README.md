@@ -10,7 +10,7 @@ FastAPI backend for Smart India Hackathon 2025—empowering Indian farmers with 
 - 📊 Full REST APIs with Swagger Docs
 
 ## 🛠 Setup & Run
-1. Clone: `git clone https://github.com/CodeMudit/SIH-2025.git && cd SIH-2025`
+1. Clone: `git clone https://github.com/MOKSH90/App-Backend.git && cd App-Backend`
 2. Install: `pip install -r requirements.txt`
 3. Run: `uvicorn main:app --reload`
 4. API Docs: http://127.0.0.1:8000/docs
@@ -28,4 +28,4 @@ FastAPI backend for Smart India Hackathon 2025—empowering Indian farmers with 
 Fork > Branch > PR. Ideal for GSoC/ML projects!
 
 ---
-SIH 2025 | Built by CodeMudit | Open Source ❤️
+SIH 2025 | Built with ❤️ | Open Source ❤️
